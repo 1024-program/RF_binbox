@@ -82,9 +82,6 @@ class Container(object):
         else:
             return is_encase, input, points, poses
 
-    # # 更新容器的H_matrix矩阵
-    # def update_H_matrix(self):
-    #     pass
 
     # 放置新的箱子
     def update_state(self, cargo:Cargo):
@@ -95,16 +92,16 @@ class Container(object):
         origin_point = cargo.point
         self._available_points.remove(origin_point)
         new_point = Point(origin_point.x+cargo.length, origin_point.y, origin_point.z)
-        if not (new_point.z > 0 and self._H_matrix[new_point.x][new_point.y] == 0):
-            self._available_points.append(new_point)
+        # if not (new_point.z > 0 and self._H_matrix[new_point.x][new_point.y] == 0):
+        self._available_points.append(new_point)
 
         new_point = Point(origin_point.x, origin_point.y+cargo.width, origin_point.z)
-        if not (new_point.z > 0 and self._H_matrix[new_point.x][new_point.y] == 0):
-            self._available_points.append(new_point)
+        # if not (new_point.z > 0 and self._H_matrix[new_point.x][new_point.y] == 0):
+        self._available_points.append(new_point)
 
         new_point = Point(origin_point.x, origin_point.y, origin_point.z+cargo.height)
-        if not (new_point.z > 0 and self._H_matrix[new_point.x][new_point.y] == 0):
-            self._available_points.append(new_point)
+        #if not (new_point.z > 0 and self._H_matrix[new_point.x][new_point.y] == 0):
+        self._available_points.append(new_point)
 
         # update H_matrix
         for x in range(origin_point.x, origin_point.x + cargo.length):
@@ -167,8 +164,8 @@ class Container(object):
 
         maxHeight = self._H_matrix.max()
         D = self._height - maxHeight.item()
-        w = 1 / 4
-        reward = D / H + V1_2 / (2 * L * W)
+        w = 256
+        reward = D / H + w * V1_2 / (2 * L * W)
         return reward
 
     @property
