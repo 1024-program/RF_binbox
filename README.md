@@ -10,7 +10,7 @@ DQN深度强化学习解决三维在线装箱问题
 ## 运行环境
 
  主机 |内存 | 显卡 | IDE | Python | torch 
------|
+-----|------|------|-----|--------|-----
 CPU：12th Gen Intel(R) Core (TM) i7-12700H  2.30 GHz|6GB RAM|NVIDIA GEFORCE RTX 3050||Pycharm2022.2.1
 |python3.8|1.13.0
 
