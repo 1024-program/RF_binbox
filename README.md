@@ -33,4 +33,13 @@ CPU：12th Gen Intel(R) Core (TM) i7-12700H  2.30 GHz | 6GB RAM | NVIDIA GEFORCE
 ![image](https://github.com/1024-program/RF_binbox/blob/main/images/%E5%9B%BE%E7%89%872.png)
 
 ![image](https://github.com/1024-program/RF_binbox/blob/main/images/%E5%9B%BE%E7%89%871.png)
+
 （4）动作-价值函数网络和目标动作-价值函数网络设置为包含6层卷积层的CNN。对当前状态和动作建模，使其能够输入到价值网络Q和Q’中。以车厢的底面为基准，建模L*W的矩阵，每个元素代表该点放置的箱子最大高度。
+
+（5）动作选择
+根据当前的状态（当前车厢的属性，包括尺寸、放置的所有箱子、H矩阵、可放置点列表等），使用ε-greedy方法选择具有最大Q值的动作或随机选择动作（动作是箱子的放置点和摆放姿态）。
+
+（6）经验重放
+
+## 说明
+
