@@ -7,12 +7,10 @@ DQN深度强化学习解决三维在线装箱问题
 1. 长方形的车厢共有8个角，并设靠近驾驶室并位于下端的一个角的坐标为（0,0,0），车厢共6个面，其中长的4个面，以及靠近驾驶室的面是封闭的，只有一个面是开着的，用于工人搬运箱子；
 2. 需要计算出每个箱子在车厢中的坐标，即每个箱子摆放后，其和车厢坐标为（0,0,0）的角相对应的角在车厢中的坐标，并计算车厢的填充率。
 
-##运行环境
-环境	版本或配置
-主机	CPU：12th Gen Intel(R) Core (TM) i7-12700H  2.30 GHz
-内存：6GB RAM
-显卡：NVIDIA GEFORCE RTX 3050
-IDE	Pycharm2022.2.1
-Python	Python3.8
-torch	1.13.0
+## 运行环境
+
+ 主机 |内存 | 显卡 | IDE | Python | torch 
+-----|
+CPU：12th Gen Intel(R) Core (TM) i7-12700H  2.30 GHz|6GB RAM|NVIDIA GEFORCE RTX 3050||Pycharm2022.2.1
+|python3.8|1.13.0
 
