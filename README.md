@@ -28,8 +28,9 @@ CPU：12th Gen Intel(R) Core (TM) i7-12700H  2.30 GHz | 6GB RAM | NVIDIA GEFORCE
 
 （3）奖励函数
 使用x-y平面中两个最大剩余矩形面积（如下图）之和与箱子到车厢顶部的距离作为奖励值R，奖励函数表示如下：
-R=D+ω(V_1+V_2)
+
+
+![image](https://github.com/1024-program/RF_binbox/blob/main/images/%E5%9B%BE%E7%89%872.png)
+
 ![image](https://github.com/1024-program/RF_binbox/blob/main/images/%E5%9B%BE%E7%89%871.png)
-
-
-### 
+（4）动作-价值函数网络和目标动作-价值函数网络设置为包含6层卷积层的CNN。对当前状态和动作建模，使其能够输入到价值网络Q和Q’中。以车厢的底面为基准，建模L*W的矩阵，每个元素代表该点放置的箱子最大高度。
